@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Operator Skill Entry</title>
+    <title>Edit Operator</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,7 +19,7 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        input, select, textarea, button {
+        input, button {
             width: 100%;
             padding: 8px;
             margin: 6px 0;
@@ -39,31 +39,19 @@
 </head>
 <body>
 
-<h2>Operator Skill Form</h2>
+<h2>Edit Operator</h2>
 
 <form method="post">
     {% csrf_token %}
-
-    EMP ID: <input type="text" name="emp_id" required>
-    Name: <input type="text" name="name" required>
-
-    Shift:
-    <select name="shift">
-        <option>A</option>
-        <option>B</option>
-        <option>C</option>
-    </select>
-
-    ST-10: <input type="number" name="st10" min="0" max="4">
-    ST-15: <input type="number" name="st15" min="0" max="4">
-    ST-20: <input type="number" name="st20" min="0" max="4">
-    ST-25: <input type="number" name="st25" min="0" max="4">
-    ST-30: <input type="number" name="st30" min="0" max="4">
-    ST-40: <input type="number" name="st40" min="0" max="4">
-
-    Remark:<br>
-    <textarea name="remark"></textarea>
-
+    Name: <input type="text" name="name" value="{{ row.NAME }}">
+    Shift: <input type="text" name="shift" value="{{ row.SHIFT }}">
+    ST-10: <input type="text" name="st10" value="{{ row.ST10 }}">
+    ST-15: <input type="text" name="st15" value="{{ row.ST15 }}">
+    ST-20: <input type="text" name="st20" value="{{ row.ST20 }}">
+    ST-25: <input type="text" name="st25" value="{{ row.ST25 }}">
+    ST-30: <input type="text" name="st30" value="{{ row.ST30 }}">
+    ST-40: <input type="text" name="st40" value="{{ row.ST40 }}">
+    Remark: <input type="text" name="remark" value="{{ row.REMARK }}">
     <button type="submit">💾 Save</button>
 </form>
 
