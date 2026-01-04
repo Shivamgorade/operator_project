@@ -15,8 +15,7 @@ venv/
 env/
 ENV/
 
-# Excel / sensitive data (optional)
-data/*.xlsx
+
 
 # IDE
 .vscode/
