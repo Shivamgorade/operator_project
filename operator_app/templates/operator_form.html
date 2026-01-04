@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operator Skill Entry</title>
+</head>
+<body>
+
+<h2>Operator Skill Form</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    EMP ID: <input type="text" name="emp_id" required><br><br>
+    Name: <input type="text" name="name" required><br><br>
+
+    Shift:
+    <select name="shift">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select><br><br>
+
+    ST-10: <input type="number" name="st10" min="0" max="4"><br>
+    ST-15: <input type="number" name="st15" min="0" max="4"><br>
+    ST-20: <input type="number" name="st20" min="0" max="4"><br>
+    ST-25: <input type="number" name="st25" min="0" max="4"><br>
+    ST-30: <input type="number" name="st30" min="0" max="4"><br>
+    ST-40: <input type="number" name="st40" min="0" max="4"><br><br>
+
+    Remark:<br>
+    <textarea name="remark"></textarea><br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

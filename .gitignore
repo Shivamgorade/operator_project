@@ -1,0 +1,23 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Django
+*.sqlite3
+*.log
+/staticfiles/
+/media/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Excel / sensitive data (optional)
+data/*.xlsx
+
+# IDE
+.vscode/
+.idea/

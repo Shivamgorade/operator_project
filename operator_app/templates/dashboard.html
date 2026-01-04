@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operator Skill Matrix</title>
+</head>
+<body>
+
+<h2>Operator Skill Matrix Dashboard</h2>
+
+<h3>Total Active Manpower: {{ total_manpower }}</h3>
+
+<!-- 🔍 SEARCH FORM -->
+<form method="get">
+    <input type="text" name="search"
+           placeholder="Search by EMP ID or Name"
+           value="{{ search_query }}">
+    <button type="submit">Search</button>
+    <a href="{% url 'dashboard' %}">Reset</a>
+</form>
+
+<br>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <th>SR NO</th>
+        <th>EMP ID</th>
+        <th>Name</th>
+        <th>Shift</th>
+        <th>ST-10</th>
+        <th>ST-15</th>
+        <th>ST-20</th>
+        <th>ST-25</th>
+        <th>ST-30</th>
+        <th>ST-40</th>
+        <th>Remark</th>
+    </tr>
+
+    {% for row in records %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ row.EMP_ID }}</td>
+        <td>{{ row.NAME }}</td>
+        <td>{{ row.SHIFT }}</td>
+        <td>{{ row.ST10 }}</td>
+        <td>{{ row.ST15 }}</td>
+        <td>{{ row.ST20 }}</td>
+        <td>{{ row.ST25 }}</td>
+        <td>{{ row.ST30 }}</td>
+        <td>{{ row.ST40 }}</td>
+        <td>{{ row.REMARK }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="11">No matching records found</td>
+    </tr>
+    {% endfor %}
+</table>
+<form action="{% url 'download_excel' %}" method="get">
+    <button type="submit">⬇ Download Operator Excel</button>
+</form>
+
+</body>
+</html>
